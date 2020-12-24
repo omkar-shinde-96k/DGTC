@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      {{>links}}
+</head>
+<style>
+      .fourthnav {
+            padding: px;
+      }
+      .chatname {
+            height: 60px;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            background: green;
+            position: sticky;
+            top: 0px;
+            z-index: 10;
+      }
+      .admindp {
+            height: 100%;
+            padding: 0;
+            {{!-- border:1px solid black; --}}
+      }
+      .admindp img {
+            width: 60px;
+            border-radius: 50%;
+      }
+      .admindp h3 {
+            margin: 0;
+            padding: 0;
+      }
+      .admin-name {
+            margin: 0;
+            padding: 0;
+            display: flex;
+      }
+      .admin-name h3 {
+            font-size: 20px;          
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+      }
+      .admin-name .fa fa-phone {
+            font-size: 30px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+      }
+      .chat {
+            background-image: url('images/dgtc3.png');
+            background-attachment: fixed;
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            width: 100%;
+            min-height: 700px;
+            background-color: grey;
+            overflow: hidden;
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+      }
+      .typemsg {
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            position: fixed;
+            bottom: 50px;
+            margin: 0;
+            padding: 0px;
+            border: none;
+      }
+      .write-msg{
+            display:flex;
+            width: 100%;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            border-radius: 10px;
+            outline: none;
+            border: 0;
+      }
+      .send-msg {
+            margin: 0;
+            padding: 0;
+      }
+      .send-msg input {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 40px;
+            /* background-color: blue; */
+            border-radius: 10px;
+            outline: none;
+            border: 0;
+      }
+      .receivemsg p,
+      .sendmsg p {
+            border-radius: 10px;
+            min-width: 25%;
+            max-width: 80%;
+            margin-top: 5px;
+            font-size: 17px;
+            color: black;
+            padding: 5px;
+            opacity: 1;
+            /* font-weight: bold; */
+      }
+      .receivemsg p {
+            /* position: absolute;
+			left: 0; */
+            background-color: white;
+            padding: 2px;
+            margin: 2px;
+      }
+      .receivemsg p span {
+            background-color: rgb(83, 77, 77);
+            color: white;
+            font-size: 11px;
+            padding: 0px 10px;
+            border-radius: 10px;
+            margin: 0;
+      }
+      .sendmsg p {
+
+            background-color: #7cd381;
+            opacity: 1;
+      }
+      #settingid {
+            position: fixed;
+            top: 60px;
+            right: 0;
+            width: 150px;
+            height: 200;
+            background-color: white;
+      }
+      #settingid ul li {
+            list-style: none;
+            padding: 5px;
+            text-align: center;
+            font-weight: bolder;
+      }
+      .settings {
+            display: none;
+      }
+</style>
+<body>
+
+      <div class="fourthnav" style="display:;">
+            <div class=" ">
+                  <div class=" chatname  border bg-primary" style="display: flex;
+			 ">
+
+                        <div class="admindp  bg-primary" style="width:20%; background:transparent;"><img
+                                    src="images/dgtc3.png" width="100%" height="100%">
+                        </div>
+                        <div class=" admin-name  " style="width:80%; display:flex;" float:left;>
+                              <div class=" " style="width:80%;">
+                                    <h3>&nbsp <i> DGTC </i> &nbsp &nbsp &nbsp &nbsp</h3>
+                                    <p> &nbsp &nbsp online </p>
+                              </div>
+                              <div class=" "
+                                    style=" width:20%; display: flex; text-align: center; justify-content:  end ; ">
+                                    <i class="fa fa-phone"
+                                          style="font-size:20px;color:white; display:flex; align-items:center;"></i>
+
+                                    &nbsp &nbsp &nbsp &nbsp &nbsp <i class="fa fa-envelope"
+                                          style="font-size:20px;color:white; display:flex; align-items:center;"></i>
+
+                                    &nbsp &nbsp &nbsp &nbsp &nbsp <i class="gotosettings fa fa-ellipsis-v"
+                                          style="font-size:20px;color:white; display:flex; align-items:center; cursor:pointer;"></i> &nbsp &nbsp  &nbsp &nbsp &nbsp
+                              </div>
+                        </div>
+                  </div>
+
+                  <div class=" chat w-100 h-75 bg-dark">
+
+                        {{!-- <div class="sendmsg bg-secondary">
+                              <p class="" style="float:right;"> hello there </p>
+                        </div> --}}
+
+                        {{#each massage}}
+                        <div class="receivemsg bg-secondary">
+
+                              <p class="" style="float:left;"><span>{{name}} {{class}} </span> <br> {{msg}} </p>
+
+                              <p class="" style="float:left;">  {{img}} </p>
+                        </div>
+                        {{/each}}
+
+                  </div>
+
+                  <script>
+                        $("html, body").animate({ scrollTop: "100%" });
+                  </script>
+
+                  <div class="row  typemsg w-100 h-75 bg-danger">
+                        <form action="/chat" method="post">
+
+                              <div class="write-msg ">
+                                     <input type="text" name="msg" id="#sendmsg" style="width:70%;" placeholder="&nbsp write something"> 
+
+                              <input type="file" style="width:10%;height:100%;padding:0% 0%;" name="img">
+
+                              <button type="submit" style="background:transparent;border:none;"><i class="fa fa-send hii" style="width:17%;font-size:35px; color: rgb(255, 255, 255);"></i></button>
+                        </div>
+                        </form>
+                  </div>
+
+                  <div class="settings" id="settingid">
+                        <ul>
+                              <li> comming soon.. </li>
+                              <li> settings </li>
+                              <li> settings </li>
+                              <li> settings </li>
+                              <li> settings </li>
+                              <li> settings </li>
+                        <ul>
+                  </div>
+            </div>
+      </div>
+
+      <script>
+            $(document).ready(function () {
+                  $('.gotosettings').click(function () { //click event
+                        $("#settingid").toggleClass("settings");
+                  })
+            })
+
+            $(document).ready(function () {
+                  $('li,.chat').click(function () {
+                        $("#settingid").addClass("settings");
+                  });
+            });
+      </script>
+
+      <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+
+      <style>
+            #bottom-nav i {
+                  margin-right: 10%;
+                  margin-left: 10%;
+            }
+
+            @media screen and (max-width: 1230px) {
+                  #bottom-nav i {
+                        margin-right: 10%;
+                        margin-left: 10%;
+                  }
+            }
+
+            @media screen and (max-width: 750px) {
+                  #bottom-nav i {
+                        margin-right: 7%;
+                        margin-left: 6%;
+                  }
+            }
+
+            @media screen and (max-width: 420px) {
+                  #bottom-nav i {
+                        margin-right: 6%;
+                        margin-left: 7%;
+                  }
+            }
+
+            @media screen and (max-width: 378px) {
+                  #bottom-nav i {
+                        margin-right: 5%;
+                        margin-left: 7%;
+                  }
+            }
+
+            @media screen and (max-width: 345px) {
+                  #bottom-nav i {
+                        margin-right: 5%;
+                        margin-left: 6%;
+                  }
+            }
+
+            @media screen and (max-width: 292px) {
+                  #bottom-nav i {
+                        margin-right: 4%;
+                        margin-left: 5%;
+                  }
+            }
+      </style>
+
+
+      <div class="container-fluid border " style="height:50px; position:sticky;
+		   bottom:0; left:0;
+		   width:100%;
+		   background:white;
+		   padding:5px;
+		   border-top:px solid rgb(160, 160, 160);
+		   z-index:10;
+		   box-shadow: inset 0px 1px 5px blue 	" id="bottom-nav">
+            <a href="/#home" id="bnavele1"> <i class="fa fa-home" style="font-size:35px;color:rgb(38, 0, 255);"></i>
+            </a>
+
+            <a href="/#home" span id="bnavele2"><i class="fa fa-bell-o" style="font-size:35px;color:black"></i></a>
+
+            <a href="/#home" id="bnavele3"> <i class="fa fa-mortar-board" style="font-size:35px;color:black"></i> </a>
+
+            <a href="/chat" id="bnavele4"> <i class="fa fa-send sendicon" style="font-size:35px;color:black"></i> </a>
+      </div>
+      <script>
+            $(document).ready(function () {
+                  $('#bnavele1').click(function () {
+                        $('.main').css('display', 'block');
+                        $('.secoundnav').css('display', 'none');
+                        $('.thirdnav').css('display', 'none');
+                        $('.fourthnav').css('display', 'none');
+                        $('#home').css('display', 'block');
+
+                        $('.fa-home').css('color', 'yellow');
+                        $('.fa-bell-o').css('color', 'black');
+                        $('.fa-mortar-board').css('color', 'black');
+                        $('.fa-send').css('color', 'black');
+                  });
+
+                  $('#bnavele2').click(function () {
+                        $('.main').css('display', 'none');
+                        $('.secoundnav').css('display', 'block');
+                        $('.thirdnav').css('display', 'none');
+                        $('.fourthnav').css('display', 'none');
+                        $('#home').css('display', 'block');
+
+                        $('.fa-home').css('color', 'black');
+                        $('.fa-bell-o').css('color', 'yellow');
+                        $('.fa-mortar-board').css('color', 'black');
+                        $('.fa-send').css('color', 'black');
+                  });
+                  $('#bnavele3').click(function () {
+                        $('.main').css('display', 'none');
+                        $('.secoundnav').css('display', 'none');
+                        $('.thirdnav').css('display', 'block');
+                        $('.fourthnav').css('display', 'none');
+                        $('#home').css('display', 'block');
+
+                        $('.fa-home').css('color', 'black');
+                        $('.fa-bell-o').css('color', 'black');
+                        $('.fa-mortar-board').css('color', 'yellow');
+                        $('.fa-send').css('color', 'black');
+                  });
+
+                  //$('#bnavele4').click(function () {
+                  //	$('.main').css('display', 'none');
+                  //	$('.secoundnav').css('display', 'none');
+                  //	$('.thirdnav').css('display', 'none');
+                  //	$('.fourthnav').css('display', 'block');
+                  //$('#home').css('display', 'none');
+
+                  //$('.fa-home').css('color', 'black');
+                  //$('.fa-bell-o').css('color', 'black');
+                  //$('.fa-mortar-board').css('color', 'black');
+                  //$('.sendicon').css('color', 'yellow');
+                  //});
+
+            });
+      </script>
+</body>
+
+</html>
