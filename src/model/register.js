@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-mongoose.connect("mongodb://localhost:27017/dgtc",{
+mongoose.connect("mongodb+srv://omkarhanzla:dgtc@cluster0.lavvr.mongodb.net/dgtc?retryWrites=true&w=majority",{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true 
@@ -64,6 +64,9 @@ const studentSchema = new mongoose.Schema({
     },
     class:{
         type: String
+    },
+    faculty:{
+        type:String
     }
 
     

@@ -51,6 +51,7 @@ app.post('/register', async (req, res) => {     // register post
                 number: req.body.number,
                 gender: req.body.gender,
                 class: req.body.class,
+                faculty: req.body.faculty,
                 password: await bcrypt.hash(password, 10),
                 confpassword: await bcrypt.hash(password, 10)
             })
@@ -167,7 +168,7 @@ app.get('*', (req, res) => {
 });
 
 app.listen(port, () => {
-    // console.log(`The application started successfully on port ${port}`);
+    console.log(`The application started successfully on port ${port}`);
 });
 
 
