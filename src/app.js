@@ -140,7 +140,6 @@ app.post('/chat', async (req, res) => {
         const varifyuser=jwt.verify(token,"mynameisomkarpandurangshinde") 
         var user= await Register.findOne({_id:varifyuser._id})
 
-
         const savemsginfo = new dgtgroup({
             msg: req.body.msg,
             name: user.name,
