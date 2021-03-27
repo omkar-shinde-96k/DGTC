@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <title>Bsc IT</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="keywords" content="DGTC college mangaon , tatkare college mangaon , mangaon senior college" />
+      {{>links}}
+</head>
+
+<body>
+      <style>
+            body {
+                  z-index: -1;
+
+            }
+
+            .shows {
+                  display: none;
+            }
+
+            #appnav {
+                  background-image: url('images/clg-front-view/dgtc5.jpg');
+                  height: 100%;
+                  width: 70%;
+                  position: fixed;
+                  right: 0%;
+                  top: 60px;
+                  z-index: 10;
+                  border: 1px solid grey;
+                  background-color: black;
+            }
+
+            .hello li a {
+                  border-bottom: 1px solid grey;
+                  color: white;
+                  font-weight: bold;
+                  text-shadow: 2px 2px 15px black,
+                        2px 2px 6px black,
+                        2px 2px 7px black,
+                        2px 2px 8px black,
+                        2px 2px 9px black;
+            }
+
+            .hello li {
+
+                  color: red;
+            }
+
+            .bodybtn {
+                  display: none;
+            }
+      </style>
+      <script>
+            $(document).ready(function () {
+                  $('#appnavbtn').click(function () {
+                        $("#appnav").toggleClass("shows");
+                  });
+            });
+
+            $(document).ready(function () {
+                  $('.main,a,.secoundnav').click(function () {
+                        $("#appnav").addClass("shows");
+                  });
+            });
+      </script>
+      {{>subnav}}
+      <script>
+            $(document).ready(function () {
+                  $('#appnavbtn').click(function () {
+                        $("#appnav").toggleClass("shows");
+                  });
+            });
+            $(document).ready(function () {
+                  $('.main,a,.secoundnav').click(function () {
+                        $("#appnav").addClass("shows");
+                  });
+            });
+      </script>
+
+      <script src="js/jquery.nicescroll.js"></script>
+      <script src="js/scripts.js"></script>
+      <script src="js/jquery.js"></script>
+
+      <!-- content of department page -->
+
+      <style>
+            .facility-img {
+                   height: 100%;
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin: 0;
+                  padding: 0
+            }
+
+            .facility-img img {
+                  height: 100%;
+                  width: 50%;
+                  padding: 20px;
+            }
+
+            .dept-info {
+                  width: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+            }
+
+            .dept-box {
+                  width: 95%;
+            }
+
+            .dept-box,
+            .vision,
+            .mission,
+            .about-dept {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+            }
+
+            .dept-info h1 {
+                  color: white;
+                  width: 100%;
+                  margin: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  flex-direction: column;
+                  background-color: blue;
+                  padding: 2px;
+                  font-family: 'Niconne', cursive;
+            }
+
+            .dept-info p {
+                  color: black;
+                  color: rgb(0, 0, 0);
+                  padding: 0px;
+                  font-family: 'Niconne', cursive;
+                  font-size: 30px;
+                  line-height: 30px;
+                  font-weight: 5px;
+            }
+
+            #sub-dept,
+            #sub-dept a {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: center;
+            }
+
+            #sub-dept a {
+                  width: 86%;
+                  height: 40px;
+                  background: rgb(53, 53, 223);
+                  margin: 10px 10px;
+                  color: white;
+                  border-radius: 20px;
+            }
+
+            .sub {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+            }
+
+            .sub h1 {
+                  color: blue;
+            }
+
+            .sub .table-responsive {
+                  margin-left: 40px;
+                  
+                  padding: 0;
+                  margin-left: 20px;
+            }
+
+            th {
+                  color: red;
+            }
+            .visit{
+                  background-color: rgb(0, 102, 255);
+                  color: cornsilk;
+                  border-radius: 10px;
+                  padding: 10px;
+                  font-size: 1.6rem;
+                  font-family:serif;
+            }
+
+            @media screen and (max-width: 500px) {
+                  .dept-info h1 {
+                        font-size: 20px;
+                  }
+
+                  .sub {
+                        flex-direction: column;
+                  }
+
+                  .facility-img  {
+                   flex-direction: column;
+                    
+                  }
+
+                  .facility-img img  {
+                  
+                   width: 98% ;      
+                   height:100%;
+                  }
+
+                  .dept-box {
+                        width: 95%;
+                  }
+
+                  .dept-info h1 {
+                        margin: 10px;
+                  }
+
+                  .dept-info p {
+                        font-size: 20px;
+                  }
+
+            }
+      </style>
+ 
+      <div class="dept-info  ">
+            <div class="dept-box">
+
+                  <h1>Chemistry Lab</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/chemistry.jpg">
+                         <img src="../images/tour/chemistry.jpg">
+                  </div>
+
+                  <p>To impart quality technical education to produce highly skilled technologist in the era of
+                        information technology and serve the society for helping the country to attain new height in
+                        Information Technology To impart quality technical education to produce highly skilled technologist in the era of
+                        information technology and serve the society for helping the country to attain new height in
+                        Information Technology <a class="visit" href="/library">Visit library</a> </p>
+
+
+
+                  <h1>Physics Lab</h1>
+                  <div class="facility-img">
+                        <img src="../images/tour/physics.jpg">
+                         <img src="../images/tour/physics.jpg">
+                  </div>
+                  <p>Implement Effective & efficient Teaching–Learning practices and provide the lifelong learning and
+                        leadership skills.
+
+                        Promote collaboration with industry to bridge the gap between academic and industrial
+                        application in emerging IT Technologies.</p>
+
+
+                  <h1> Botany Lab</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/botany.jpg">
+                         <img src="../images/tour/botany.jpg">
+                  </div>
+
+                  <p>The Department of Information Technology has been established in the Year 2008.Currently the intake
+                        capacity is 60. Basic aim of the department is to provide the lifelong nent or program to meet
+                        desired needs. Department has well equipped labs with
+                        latest software’s required for curriculum development. Department also conducts various
+                        activities for student & staff to develop & enhance their personal as well as technical skills.
+                  </p>
+
+                  <h1>Computer Lab</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/ITLab.jpg">
+                         <img src="../images/tour/ITLab.jpg">
+                  </div>
+
+                  <p>To impart quality technical education to produce highly skilled technologist in the era of
+                        information technology and serve the society for helping the country to attain new height in
+                        Information Technology</p>
+
+
+
+                  <h1 id="library">Library</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/Books.jpg">
+                         <img src="../images/tour/Books.jpg">
+                  </div>
+
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eaque obcaecati culpa exercitationem ullam earum, iusto libero voluptatum assumenda odit, accusantium cupiditate, quas error itaque nesciunt! Earum pariatur aperiam ut! <a class="visit" href="/library">Visit library</a> </p>
+
+
+                  <h1> Canteen</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/canteen.jpg">
+                         <img src="../images/tour/canteen.jpg">
+                  </div>
+
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quas magnam architecto neque autem. Rerum, dolor ab tempora quis quisquam, sapiente numquam in cumque sint enim recusandae ex sunt harum.
+                  </p>
+
+
+
+                  <h1>Gymkhana</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/clg-front-view/dgtc3.png">
+                         <img src="../images/clg-front-view/dgtc3.png">
+                  </div>
+
+                  <p>To impart quality technical education to produce highly skilled technologist in the era of
+                        information technology and serve the society for helping the country to attain new height in
+                        Information Technology</p>
+
+
+
+                  <h1>Reading Room</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/Readingroom.jpg">
+                         <img src="../images/tour/Readingroom.jpg">
+                  </div>
+
+                  <p>Implement Effective & efficient Teaching–Learning practices and provide the lifelong learning and
+                        leadership skills.
+
+                        Promote collaboration with industry to bridge the gap between academic and industrial
+                        application in emerging IT Technologies.</p>
+
+
+                  <h1> Student Corner</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/scorner.jpg">
+                         <img src="../images/tour/scorner1.jpg">
+                  </div>
+
+                  <p>The Department of Information Technology has been established in the Year 2008.Currently the intake
+                        capacity is 60. Basic aim of the department is to provide the lifelong nent or program to meet
+                        desired needs. Department has well equipped labs with
+                        latest software’s required for curriculum development. Department also conducts various
+                        activities for student & staff to develop & enhance their personal as well as technical skills.
+                  </p>
+
+                  <h1>Multipurpose Hall</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/Multipurpose.jpg">
+                         <img src="../images/tour/Multipurpose.jpg">
+                  </div>
+
+                  <p>To impart quality technical education to produce highly skilled technologist in the era of
+                        information technology and serve the society for helping the country to attain new height in
+                        Information Technology</p>
+
+
+
+                  <h1>Conference Hall</h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/conference.jpg">
+                         <img src="../images/tour/conference.jpg">
+                  </div>
+
+                  <p>Implement Effective & efficient Teaching–Learning practices and provide the lifelong learning and
+                        leadership skills.
+
+                        Promote collaboration with industry to bridge the gap between academic and industrial
+                        application in emerging IT Technologies.</p>
+
+                  <h1> Play Ground </h1>
+
+                  <div class="facility-img">
+                        <img src="../images/tour/ground.jpg">
+                         <img src="../images/tour/ground.jpg">
+                  </div>
+
+                  <p>The Department of Information Technology has been established in the Year 2008.Currently the intake
+                        capacity is 60. Basic aim of the department is to provide the lifelong nent or program to meet
+                        desired needs. Department has well equipped labs with
+                        latest software’s required for curriculum development. Department also conducts various
+                        activities for student & staff to develop & enhance their personal as well as technical skills.
+                  </p>
+            </div>
+      </div>
+      <br>
+
+      {{>footer}}
+</body>
+
+</html>

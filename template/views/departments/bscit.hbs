@@ -2,52 +2,20 @@
 <html lang="en">
 
 <head>
-	<title>DGTC</title>
-	<!-- Meta tag Keywords -->
+	<title>IT Department</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="DGTC college mangaon , tatkare college mangaon , mangaon senior college" />
-
-	<script type="application/x-javascript">
-            addEventListener("load", function() {
-                setTimeout(hideURLbar, 0);
-            }, false);
-    
-            function hideURLbar() {
-                window.scrollTo(0, 1);
-            }
-        </script>
-
-	<link rel="stylesheet" href="../css/bootstrap.css"> <!-- Bootstrap-Core-CSS -->
-	<link rel="stylesheet" href="../css/bootstrap.css">
-
-	<link rel="stylesheet" href="../css/style.css" type="text/css" />
-	<link rel="stylesheet" href="../css/font-awesome.css"> <!-- Font-Awesome-Icons-CSS -->
-
-	<link rel="stylesheet" href="../css/swipebox.css">
-	<link rel="stylesheet" href="../css/jquery-ui.css" />
-
-
-	<!-- online-fonts -->
-	<link
-		href="//fonts.googleapis.com/css?family=Exo+2:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;subset=cyrillic,latin-ext"
-		rel="stylesheet">
-	<link
-		href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;subset=latin-ext"
-		rel="stylesheet">
-	<!-- online-fonts end-->
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-
+	{{>links}}
 </head>
 
 <body>
-	
-	{{>navbar}}
-
-	 
 	<style>
+		body {
+			z-index: -1;
+			font-size: 10px;
+		}
+
 		.shows {
 			display: none;
 		}
@@ -95,7 +63,19 @@
 		$(document).ready(function () {
 			$('.main,a,.secoundnav').click(function () {
 				$("#appnav").addClass("shows");
-
+			});
+		});
+	</script>
+	{{>subnav}}
+	<script>
+		$(document).ready(function () {
+			$('#appnavbtn').click(function () {
+				$("#appnav").toggleClass("shows");
+			});
+		});
+		$(document).ready(function () {
+			$('.main,a,.secoundnav').click(function () {
+				$("#appnav").addClass("shows");
 			});
 		});
 	</script>
@@ -104,543 +84,239 @@
 	<script src="js/scripts.js"></script>
 	<script src="js/jquery.js"></script>
 
-
 	<!-- content of department page -->
 
 	<style>
-		.dept-info{
-			width:100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
-		.dept-box{
-			width:85%;
-		}
-		.dept-box, .vision , .mission, .about-dept{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-		}
-		.dept-info h1{
-			color:white;
-			width:100%;
-			margin:20px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			background-color: blue;
-			padding:2px;
-		}
-		.dept-info p{
-			color:black;
-			font-weight: bold;
-		}
-		.dept-info p{
-			color:rgb(0, 0, 0);
-			padding:20px;
-		}
-		
-		#sub-dept,
-		#sub-dept a {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-		}
-
-		#sub-dept a {
-			width: 86%;
-			height: 40px;
-			background: rgb(53, 53, 223);
-			margin: 10px 10px;
-			color: white;
-			border-radius: 20px;
-		}
-
-		.sub {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			/* flex-direction: column;	 */
-		}
-
-		.sub h1 {
-			color: blue;
-		}
-
-		.sub .table-responsive {
-			margin-left: 40px;
-			/* width: 500px; */
-			padding: 0;
-			margin-left: 20px;
-		}
-
+		@media screen and (max-width: 500px) {}
 	</style>
 
- 
+	<br>
+	<h1 align="center"><b>IT DEPARTMENT</b> </h1>
+	<br>
 
 
 
-	<div id="sub-dept">
-		<a href="#" id="fyit">F.Y. Bsc IT</a>
-		<a href="#" id="syit">S.Y. Bsc IT</a>
-		<a href="#" id="tyit">T.Y. Bsc IT</a>
+	{{!-- syllybus start --}}
+
+	<div class="container" style="font-size: 1.5rem;">
+		<div class="row">
+			<div class="col-4" style="height: 100%; min-width:90%!important">
+
+				<div class="list-group" id="list-tab" role="tablist" style="height: 100%; width:100%">
+					<h1 style="margin-top:15px; " class="text-center"> Hindi
+						Syllabus </h1>
+					<br>
+
+					<a class="list-group-item list-group-item-action active .listclass" id="list-home-list"
+						data-toggle="list" href="../documents/it/fyit.pdf" role="tab" aria-controls="home">F.Y.BSc IT
+						Syllabus </a>
+
+					<a class="list-group-item  list-group-item-action" id="list-profile-list" data-toggle="list"
+						href="../documents/it/syit.pdf" role="tab" aria-controls="profile">S.Y.BSc IT Syllabus </a>
+
+					<a class="list-group-item active list-group-item-action" id="list-messages-list" data-toggle="list"
+						href="../documents/it/tyit.pdf" role="tab" aria-controls="messages"> T.Y.BSc IT Syllabus</a>
+
+					<a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+						href="../documents/it/mscit1.pdf" role="tab" aria-controls="settings">MSc IT part-1 Syllabus</a>
+
+					<a class="list-group-item list-group-item-action active .listclass" id="list-home-list"
+						data-toggle="list" href="../documents/it/mscit1.pdf" role="tab" aria-controls="home">MSc IT
+						part-2
+						Syllabus</a>
+				</div>
+			</div>
+		</div>
 	</div>
+	{{!-- syllybus end --}}
 
-<img style="height:400px; width:100%; padding:50px;" src="../images/dgtc.png">
+	{{!-- result and achievement start --}}
+	<br>
 
-<div class="dept-info  ">
-	 <div class="dept-box">
-	<!-- <div class="vision"> -->
-		<h1>Vision</h1>
-		<p>To impart quality technical education to produce highly skilled technologist in the era of information technology and serve the society for helping the country to attain new height in Information Technology</p>
-	<!-- </div> -->
-	
-	<!-- <div class="mission"> -->
-		<h1>mission</h1>
-		<p>Implement Effective & efficient Teaching–Learning practices and provide the lifelong learning and leadership skills.
-	
-			Promote collaboration with industry to bridge the gap between academic and industrial application in emerging IT Technologies.</p>
-	<!-- </div> -->
-	
-	<!-- <div class="about-dept"> -->
-		<h1>about Department</h1>
-		<p>The Department of Information Technology has been established in the Year 2008.Currently the intake capacity is 60. Basic aim of the department is to provide the lifelong learning and leadership skills to student that enables them to grow in their professions to achieve better positions in the IT industry. This course introduces students to the steps necessary to analyse a problem in information technology and identify and define the computing requirements appropriate to its solution, with a focus on how to design, implement and evaluate a computer-based system, process, component or program to meet desired needs. Department has well equipped labs with latest software’s required for curriculum development. Department also conducts various activities for student & staff to develop & enhance their personal as well as technical skills. </p>
-	<!-- </div> -->
-
-</div>
-</div>
-
-
-
-
-
+	<br>
+	{{!-- result and achievement end --}}
 
 	<br>
 
-	<div class="sub">
-		<h1>fist year syllabus </h1>
-		<br>
-		<div class="table-responsive">
-			<table class="table ">
-				<thead>
-					<th>1st semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT101</td>
-						<td>Imperative Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT102</td>
-						<td>Digital Electronics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT103</td>
-						<td>Operating System</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT104</td>
-						<td>Discrete Mathematics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT105</td>
-						<td>Communition Skill</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-
-<br>
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<th>2nd semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT201</td>
-						<td>Object oriented Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT202</td>
-						<td> Microprocessor Architecture</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT203</td>
-						<td> Web Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT204</td>
-						<td>Numerical and Statistical Methods</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT205</td>
-						<td> Green Computing</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-
-	<hr>
-
-	<div class="sub">
-		<h1>fist year syllabus </h1>
-		<br>
-		<div class="table-responsive">
-			<table class="table ">
-				<thead>
-					<th>1st semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT101</td>
-						<td>Imperative Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT102</td>
-						<td>Digital Electronics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT103</td>
-						<td>Operating System</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT104</td>
-						<td>Discrete Mathematics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT105</td>
-						<td>Communition Skill</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-
-<br>
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<th>2nd semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT201</td>
-						<td>Object oriented Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT202</td>
-						<td> Microprocessor Architecture</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT203</td>
-						<td> Web Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT204</td>
-						<td>Numerical and Statistical Methods</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT205</td>
-						<td> Green Computing</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-
-	<div class="sub">
-		<h1>fist year syllabus </h1>
-		<br>
-		<div class="table-responsive">
-			<table class="table ">
-				<thead>
-					<th>1st semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT101</td>
-						<td>Imperative Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT102</td>
-						<td>Digital Electronics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT103</td>
-						<td>Operating System</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT104</td>
-						<td>Discrete Mathematics</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT105</td>
-						<td>Communition Skill</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-
-<br>
-		<div class="table-responsive">
-			<table class="table">
-				<thead>
-					<th>2nd semister</th>
-					<tr>
-
-						<th>code</th>
-						<th>subject name</th>
-					</tr>
-				</thead>
-				<tbody>
-
-					<tr>
-
-						<td>USIT201</td>
-						<td>Object oriented Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT202</td>
-						<td> Microprocessor Architecture</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT203</td>
-						<td> Web Programming</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT204</td>
-						<td>Numerical and Statistical Methods</td>
-					</tr>
-
-					<tr>
-
-						<td>USIT205</td>
-						<td> Green Computing</td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<hr>
-
-
-
-	<div class="team-w3l" id="team">
-		<div class="container">
-			<h3 class="w3l-title">Our Skilled Lecturers</h3>
-			<div class="w3layouts_header">
-				<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
-			</div>
-			<div class="team-w3l-grid">
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar sir</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+	<div class="secoundnav" style="display:visible; padding:15px; font-size:1.5rem;	background-color: #c3d6ffa6;">
+		<style>
+			.event-heading,
+			h1 {
+				color: white;
+				text-shadow: 0px 0px 1px blue, 3px 3px 2px blue;
+			}
+
+			.events {
+				box-shadow: 0px 0px 7px white, 0px 0px 7px white,
+					0px 0px 7px white, 0px 0px 7px white,
+					0px 0px 7px white, 0px 0px 7px white,
+					0px 0px 7px white, 0px 0px 7px white;
+				padding: 15px;
+				margin-bottom: 60px;
+			}
+
+			.events h3 {
+				text-shadow: 0px 0px 5px blue, 0px 0px 10px blue;
+				color: #ffffff;
+				font-family: 'Niconne', cursive;
+				font-size: 30px;
+			}
+
+			.events h3 span {
+				font-family: 'Parisienne', cursive;
+			}
+
+			.events-details {
+				color: black;
+			}
+
+			.events-img {
+				height: 100%;
+				width: 100%;
+			}
+
+			.events-img a img,
+			.events-img a video {
+				height: 100%;
+				width: 100%;
+				box-shadow: 0px 0px 5px blue;
+				margin-bottom: 10px;
+			}
+		</style>
+
+
+		{{!-- our skilled teachers --}}
+
+		<div class="team-w3l" id="team">
+			<div class="container">
+				<h3 class="w3l-title">Our Skilled Lecturers</h3>
+				<div class="w3layouts_header">
+					<p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+				</div>
+				<div class="team-w3l-grid">
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar sir</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar sir</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar sir</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="team-w3l-grid grid-2-team">
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+				<div class="team-w3l-grid grid-2-team">
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
-					<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
-						<h5>Dr.B.M Khamkar</h5>
-						<div class="about_opa">
-							<p>Principal</p>
-							<ul class="fb_icons2 text-center">
-								<li><a class="fa fa-facebook" href="#"></a></li>
-								<li><a class="fa fa-twitter" href="#"></a></li>
-								<li><a class="fa fa-google" href="#"></a></li>
-								<li><a class="fa fa-linkedin" href="#"></a></li>
-								<li><a class="fa fa-pinterest-p" href="#"></a></li>
-							</ul>
+					<div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+						<div class="about_img"><img src="../images/t-staff/khamkar.jpg" alt="">
+							<h5>Dr.B.M Khamkar</h5>
+							<div class="about_opa">
+								<p>Principal</p>
+								<ul class="fb_icons2 text-center">
+									<li><a class="fa fa-facebook" href="#"></a></li>
+									<li><a class="fa fa-twitter" href="#"></a></li>
+									<li><a class="fa fa-google" href="#"></a></li>
+									<li><a class="fa fa-linkedin" href="#"></a></li>
+									<li><a class="fa fa-pinterest-p" href="#"></a></li>
+								</ul>
+							</div>
 						</div>
 					</div>
+					<div class="clearfix"></div>
 				</div>
-				<div class="clearfix"></div>
 			</div>
 		</div>
-	</div>
-
-
-{{>footer}}
-
+		{{!-- our skilled teachers end --}}
+		<br>
 
 
 
 
+		<h1 class="event-heading" align="center"><a>Events Of 2020-21</a> </h1> <br>
+		<br>
+		<div class="events">
+			<h3 class="events-title" align="center"> <span>Educational tour </span>- 07-03-2020 </h3> <br>
+			<p class="events-details">Organize educational tour at murud-janjira for TY BA students on 07-03-2020 </p>
+			<br>
+			<div class="row md-2 events-img">
 
+				<a class="col-sm-12 col-lg-6" href="../documents/hindi/hindi-events/trip.jpg"><img
+						src="../documents/hindi/hindi-events/trip.jpg"></a>
 
+				<a class="col-sm-12 col-lg-6" href="../documents/hindi/hindi-events/trip2.jpg"><img src="../documents/hindi/hindi-events/trip2.jpg"></a>
+			</div>
+		</div> 
+	</div> 
+	
+	{{!--secound nav end --}}
+
+	{{>footer}}
 
 </body>
 
 </html>
-
-
-
-

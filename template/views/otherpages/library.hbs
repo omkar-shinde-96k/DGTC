@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="D. G. tatkare college library ">
+    <meta name="keywords" content="D. G. tatkare college library">
+    <title>library</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    {{>links}}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 20px;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+         
+        }
+        .ourLibrary{
+               margin: 0 70px; 
+        }
+        .lHours {
+            padding: 100px;
+            padding-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: tomato;
+        }
+
+        .imgs {
+            display: flex;
+            width: 100%;
+            height: 400px;
+        }
+
+        .imgs img {
+            width: 50%;
+            height: 100%;
+            padding: 10px;
+        }
+        .team{
+            margin: 0;
+            padding: 0;
+        }
+
+        .style8 {
+            color: rgb(255, 255, 255);
+            text-align: center;
+            --color1: rgb(0, 208, 255);
+            --color2: lime;
+            --color3: rgb(0, 73, 128);
+            --color4: rgb(255, 255, 255);
+            font-family: Monoton;
+            font-size: 40px;
+            margin:20px;
+        }
+
+
+
+        x-sign {
+            --interval: 1s;
+            display: block;
+            text-shadow:
+                0 0 10px var(--color1),
+                0 0 20px var(--color2),
+                0 0 40px var(--color3),
+                0 0 80px var(--color4);
+            will-change: filter, color;
+            filter: saturate(60%);
+            animation: flicker steps(100) var(--interval) 1s infinite;
+        }
+
+
+
+        @keyframes flicker {
+            50% {
+                color: white;
+                filter: saturate(200%) hue-rotate(20deg);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+
+            .main,
+            .lHours {
+                margin: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="ourLibrary">
+
+          
+                <x-sign class="style8">
+                    Our Library
+                </x-sign>
+            
+
+            <div class="imgs">
+
+                <img src="../images/tour/Books.jpg">
+                <img src="../images/tour/Books.jpg">
+            </div>
+            <br>
+            <p>IIT Bombay’s Central Library is like IIT Bombay – user-focused, innovative, and excellence driven. The
+                library has always benefited from the institutes’ culture, is pioneer in adopting new technology, and is
+                far
+                ahead than many libraries in the country. Central Library manages knowledge, both in print and digital
+                formats, ensures seamless discovery and access to these scholarly resources, and provides faculty,
+                students,
+                and staff with professional support to find, evaluate, manage, and use such resources. It provides
+                high-quality ambiance for both reflective and collaborative work and study. Its collection of about 4.40
+                lakh items is used by more than 11000 members and others . The library extensively uses social media for
+                improved communication and interaction and has created a blog to post current and interesting
+                information
+                and news items. Users can also follow us on the facebook and twitter. This is the reflection of
+                library’s
+                continuous engagement with its users as a valuable partner in their learning and research.
+
+                Renovation Plans
+            <p>
+                IIT Bombay Library has planned for a major renovation of its building infrastructure and other
+                facilities
+                including addition of a new floor. The work has already started and is scheduled to be completed within
+                a
+                year. The plan envisages complete face lift of its entrance and circulation area, with a beautiful lobby
+                and
+                exhibit area, reorganization of reference and periodicals reading halls, providing a variety of users
+                spaces
+                for individual and group studies, creation of digital knowledge lab and language lab, improved staff
+                work
+                areas and a large reading hall open for 24×7. When completed, the library will have the ambiance and
+                facilities comparable with the best libraries.</p>
+            </p>
+        </div>
+
+        <div class="lHours">
+            <p>
+            <h1 class="w3l-title">
+                <x-sign class="style8">
+                    Library Working Hours
+                </x-sign>
+            </h1>
+
+
+            Monday through Friday 0900 – 2300 hrs
+            Monday through Friday 0900 – 0100 hrs (during examination)
+            Saturdays / Sundays / Holidays 1000 – 1700 hrs
+            Saturdays / Sundays / Holidays 1000 – 0100 hrs (during examination)
+            Library Holidays
+            <br><br>
+            The library remains open on all days of the year except on the following Holidays
+            <br><br><br>
+            Republic Day 26th January
+            Independence day 15th August
+            Gandhi Jayanti 2nd October
+            Holi
+            Diwali (Deepavali)
+            Circulation Hours
+            <br><br>
+            Monday through Friday 0900–2000 hrs
+            Saturday, Sunday & Holidays 1100–1300 hrs
+            Self Issue / self Check out, any time till library is open.
+            Study room books issued for overnight, one hour before closing of the library on all days
+            A drop box has been placed near security check point. Library members desiring to return the borrowed
+            books can be dropped them in the box.
+            Bound volumes of journals, loose issues, pamphlets and standards are issued from first floor issue
+            counter on working days from 0900–1800 hrs.
+            <br><br>
+            The above mentioned Central Library working days/duty hours approved by the institute competent
+            authority.
+            </p>
+        </div>
+
+       
+        <div class="team">
+            <!-- team -->
+            <div class="team-w3l" id="team">
+                <div class="container">
+                    <h3 class="w3l-title">Our Team</h3>
+                    <div class="w3layouts_header">
+                        <p><i class="fa fa-graduation-cap" aria-hidden="true"></i></p>
+                    </div>
+                      
+                    <div class="team-w3l-grid grid-2-team">
+                        <div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+                            <div class="about_img"><img src="images/t-staff/sangita.jpg" alt="">
+                                <h5>Dr.B.M Khamkar</h5>
+                                <div class="about_opa">
+                                    <p>Principal</p>
+                                    <ul class="fb_icons2 text-center">
+                                        <li><a class="fa fa-facebook" href="#"></a></li>
+                                        <li><a class="fa fa-twitter" href="#"></a></li>
+                                        <li><a class="fa fa-google" href="#"></a></li>
+                                        <li><a class="fa fa-linkedin" href="#"></a></li>
+                                        <li><a class="fa fa-pinterest-p" href="#"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+                            <div class="about_img"><img src="images/t-staff/sangita.jpg" alt="">
+                                <h5>Dr.B.M Khamkar</h5>
+                                <div class="about_opa">
+                                    <p>Principal</p>
+                                    <ul class="fb_icons2 text-center">
+                                        <li><a class="fa fa-facebook" href="#"></a></li>
+                                        <li><a class="fa fa-twitter" href="#"></a></li>
+                                        <li><a class="fa fa-google" href="#"></a></li>
+                                        <li><a class="fa fa-linkedin" href="#"></a></li>
+                                        <li><a class="fa fa-pinterest-p" href="#"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 about-poleft t1">
+                            <div class="about_img"><img src="images/t-staff/sangita.jpg" alt="">
+                                <h5>Dr.B.M Khamkar</h5>
+                                <div class="about_opa">
+                                    <p>Principal</p>
+                                    <ul class="fb_icons2 text-center">
+                                        <li><a class="fa fa-facebook" href="#"></a></li>
+                                        <li><a class="fa fa-twitter" href="#"></a></li>
+                                        <li><a class="fa fa-google" href="#"></a></li>
+                                        <li><a class="fa fa-linkedin" href="#"></a></li>
+                                        <li><a class="fa fa-pinterest-p" href="#"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+ 
+ 
+                </div>
+            </div>
+        </div>
+        <!-- //team -->
+
+
+    </div>
+</body>
+
+</html>
